@@ -1,5 +1,7 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
+<!--1:31 WDI4 -->
+
 # Project: The **Offline** Death Square
 
 As we all know, intergalactic WiFi is not the best.  "The Boss" (you know who I'm talking about) got us some pretty shady Internet to cut corners, claiming, "Comcast is a rip-off, it's like they're trying to put the entire galaxy under their iron fist."  With that in mind, we need to make sure we can see our Death Square Dashboard™, even when the Internet's out.
@@ -27,6 +29,8 @@ As we all know, intergalactic WiFi is not the best.  "The Boss" (you know who I'
 10. Save this file, go back to Dev Tools, and uncheck the `Offline` box.  Refresh the page.  Verify your images, `index.html`, and `service-worker.js` are all in `Cache Storage` in the `Application` tab of Dev Tools.  If they are not, you may need to click the `Update` link on your Service Worker in Dev Tools.
 
 11. Check `Offline` again, and refresh the page.  This time, we should see our death square in all its offline glory!
+
+<!--Turning over to devs at 1:36 WDI4, called it a day at 2:12 -->
 
 ### Resources
 
