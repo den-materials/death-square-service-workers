@@ -10,23 +10,23 @@ As we all know, intergalactic WiFi isn't the best. With that in mind, we need to
 
 2) Navigate into `imperial-starfleet` and start up our front end.
 
-3) Put the same Service Worker `<script>` tag that we used in last lesson at the bottom of the `index.html` `<body>` tag.
+3) Globally install the `yarn` package with `npm`.
 
-4) Add an empty `service-worker.js` file in the `src` directory.
+4) This version of the death square is old, we need to update it:
 
-5) Add `service-worker.js` to the array of `assets` in the `.angular-cli-json` file in our app's root directory.
+  a) Globally install the `npm-check-updates` package
 
-6) Check your Dev Tools console. If you don't see `ServiceWorker registration successful...`, make sure you followed all of the steps above, then kill and start `ng serve` again.
+  b) Update all the packages with `ncu -u`
 
-7) To take this app fully offline, we'll need to build it first. Go to the root of your app and run `ng build --prod --aot=false`. The contents of your app are now in `dist` (for "distribution").  
+  c) Install these updates packages with `npm install`
 
-8) Open your app by `cd`ing into `dist` and running `python -m SimpleHTTPServer`. Go into the `Application` tab in Dev Tools, select `service workers` in the sidebar, and check the `offline` box. Refresh the page and the dashboard should disappear. No offline access? Let's fix that.
+5) Follow the steps for `Adding a service worker to an existing app` in [this tutorial](https://angular.io/guide/service-worker-getting-started).
 
-9) In `dist`, fill out `service-worker.js` the same way we did in the last lesson: with a `fetch` and an `install` promise.  However, you'll need different URLs to cache. Make sure you add `index.html`, the Service Worker file, and both images inside your `assets` folder.
+6) Open your app by `cd`ing into `dist` and running `python -m SimpleHTTPServer`. Go into the `Application` tab in Dev Tools, select `service workers` in the sidebar, and check the `offline` box. Refresh the page and the dashboard should stay.  We're offline!
 
-10) Save this file, go back to Dev Tools, and uncheck the `offline` box. Refresh the page. Verify your images, `index.html`, and `service-worker.js` are all in `cache Storage` in the `application` tab of Dev Tools. If they're not, you may need to click the `update` link on your Service Worker in Dev Tools.
+7) Open a new incognito tab in Chrome, open Dev Tools, go into the `Application` tab in Dev Tools, select `service workers` in the sidebar, and check the `offline` box.  Try going to `http://localhost:8000`, it should not load.  Now uncheck the `offline` box, refresh, and you should see the dashboard.
 
-11) Check `offline` again and refresh the page. This time, we should see our death square in all its offline glory.
+8) Unheck `offline` again and refresh the page. This time, we should see our death square in all its offline glory.
 
 >**Note:** Make sure you are going directly to `http://localhost:8000/` when you refresh, not any of the sub-pages like `/info/8`. You can navigate to those sub-pages later by clicking on the turrets, but if you do it in the beginning, it will trigger a network request. Because we're offline, this would fail.
 
